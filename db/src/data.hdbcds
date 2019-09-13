@@ -1,0 +1,62 @@
+namespace hsd.db;
+
+context data {
+	
+	// admin
+	
+	entity business_partner {
+		key id : String(36);
+		name : String(255);
+	}
+
+	entity tenant {
+		key id : String(36);
+		name : String(255);
+		active : Boolean;
+		business_partner : String(36);
+	}
+	
+	// end admin
+	
+	// tenant
+	
+	entity zone {
+		key id : String(36);
+		key tenant : String(36);
+		name : String(255);
+	}
+	
+	entity app_type {
+		key id : String(36);
+		key tenant :  String(36);
+		type :  String(255);
+	}
+	
+	entity app {
+		key id : String(36);
+		key tenant :  String(36);
+		type : String(36);
+		name : String(255);
+		instances : Integer;
+	}
+	
+	entity instance {
+		key id : String(36);
+		key tenant :  String(36);
+		name : String(255);
+		host_name : String(255);
+		app : String(36);
+		zone : String(36);
+    	ip_address : String(50);
+    	vip_address : String(50);
+        secure_vip_address : String(50);
+        status : String(50);
+        port : Integer;
+        secure_port : Integer;
+        home_page_url : String(1024);
+        status_page_url : String(1024);
+        health_check_url : String(1024);
+	}	
+	
+	// end tenant
+};

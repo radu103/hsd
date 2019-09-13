@@ -1,0 +1,6 @@
+service {
+	"hsd.db::data.zone" as "zone";
+	"hsd.db::data.app_type" as "app_type";
+	"hsd.db::data.app" as "app";
+	"hsd.db::data.instance" as "instance";
+}

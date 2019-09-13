@@ -1,0 +1,4 @@
+service {
+	"hsd.db::data.business_partner" as "business_partner";
+	"hsd.db::data.tenant" as "tenant";
+}
